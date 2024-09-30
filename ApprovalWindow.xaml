@@ -1,0 +1,36 @@
+﻿<Window x:Class="PROG2BIceTask2.ApprovalWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PROG2BIceTask2"
+        mc:Ignorable="d"
+        Title="ApprovalWindow" Height="450" Width="800"  Background="#3E3E3E">
+    <Grid Margin="10">
+        <StackPanel>
+            <!-- List of Requests -->
+            <Label Content="Select Payment Request:" FontWeight="Bold" FontSize="16" Foreground="Orange" Margin="0,10,0,5"/>
+            <ListBox Name="RequestList" SelectionChanged="RequestList_SelectionChanged" Height="100" Width="515" Background="#f2f2f2"/>
+
+            <!-- Display Selected Request Details -->
+            <TextBlock Name="SelectedRequestDetails" Foreground="White" FontSize="14" TextWrapping="Wrap" Height="60" Width="515" Background="#4E4E4E" Padding="5"/>
+
+            <!-- Role Selection -->
+            <Label Content="Approver Role:" FontWeight="Bold" FontSize="16" Foreground="Orange" Margin="0,10,0,5"/>
+            <ComboBox Name="ApproverRole" SelectedIndex="0" Height="30" Width="515" Background="#f2f2f2" FontSize="14">
+                <ComboBoxItem Content="Team Lead" />
+                <ComboBoxItem Content="Manager" />
+                <ComboBoxItem Content="Director" />
+            </ComboBox>
+
+            <!-- Approve/Reject Buttons -->
+            <Button Name="ApproveButton" Content="Approve" Click="ApproveButton_Click"
+                    Height="40" Width="515" Background="Orange" Foreground="White"
+                    FontWeight="Bold" FontSize="16" Margin="0,10,0,10"/>
+
+            <Button Name="RejectButton" Content="Reject" Click="RejectButton_Click"
+                    Height="40" Width="515" Background="Orange" Foreground="White"
+                    FontWeight="Bold" FontSize="16" Margin="0,10,0,10"/>
+        </StackPanel>
+    </Grid>
+</Window>
